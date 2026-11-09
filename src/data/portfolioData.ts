@@ -82,7 +82,7 @@ export const PROJECTS: Project[] = [
     title: 'SMEFin Analytics — Platform Manajemen Keuangan & Arus Kas UMKM',
     category: 'Business Analysis',
     subtitle: 'Sinergi Analisis Bisnis Keuangan & Dashboard UI yang Intuitif',
-    image: '/src/assets/images/project_fintech_dashboard_1794191701643.jpg',
+    image: '/assets/images/project_fintech_dashboard_1794191701643.jpg',
     overview:
       'Platform berbasis web yang dirancang untuk membantu pemilik UMKM memantau arus kas masuk dan keluar secara real-time tanpa harus memahami istilah akuntansi yang rumit.',
     problem:
@@ -116,7 +116,7 @@ export const PROJECTS: Project[] = [
     title: 'ReSource — Aplikasi Mobile Produk Berkelanjutan & Eco-Lifestyle',
     category: 'UI/UX Design',
     subtitle: 'Mobile E-Commerce Ramah Lingkungan dengan Jejak Karbon Transparan',
-    image: '/src/assets/images/project_mobile_ecommerce_1794191702023.jpg',
+    image: '/assets/images/project_mobile_ecommerce_1794191702023.jpg',
     overview:
       'Aplikasi mobile belanja berkelanjutan yang menghubungkan produsen lokal ramah lingkungan dengan konsumen sadar ekologis, dilengkapi fitur pelacakan transparansi dampak lingkungan.',
     problem:
@@ -150,7 +150,7 @@ export const PROJECTS: Project[] = [
     title: 'CampusWell — Sistem Informasi Penjadwalan Layanan Konseling',
     category: 'Web & Mobile',
     subtitle: 'Portal Layanan Kesehatan Mental & Konseling Mahasiswa Terpadu',
-    image: '/src/assets/images/project_health_system_1794191702534.jpg',
+    image: '/assets/images/project_health_system_1794191702534.jpg',
     overview:
       'Perancangan sistem informasi layanan konseling psikologi dan bimbingan akademik mahasiswa untuk menggantikan sistem registrasi manual berbasis spreadsheet yang rawan kebocoran data pribadi.',
     problem:

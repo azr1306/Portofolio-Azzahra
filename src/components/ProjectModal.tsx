@@ -60,10 +60,13 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           </div>
 
           {/* Project Showcase Image */}
-          <div className="rounded-2xl overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+          <div className="rounded-2xl overflow-hidden border border-slate-200 bg-slate-50 shadow-sm min-h-[240px] flex items-center justify-center">
             <img
               src={project.image}
               alt={project.title}
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+              }}
               className="w-full h-auto object-cover max-h-[460px]"
               referrerPolicy="no-referrer"
             />

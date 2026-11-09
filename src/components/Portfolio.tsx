@@ -1,8 +1,48 @@
 import React, { useState } from 'react';
-import { ArrowUpRight, Eye } from 'lucide-react';
+import { ArrowUpRight, Eye, LayoutDashboard, Smartphone, Layers } from 'lucide-react';
 import { PROJECTS } from '../data/portfolioData';
 import { Project } from '../types/portfolio';
 import { ProjectModal } from './ProjectModal';
+
+interface ProjectImageProps {
+  src: string;
+  alt: string;
+  title: string;
+  category: string;
+}
+
+const ProjectImage: React.FC<ProjectImageProps> = ({ src, alt, title, category }) => {
+  const [hasError, setHasError] = useState(false);
+
+  if (hasError) {
+    return (
+      <div className="w-full h-full bg-gradient-to-br from-slate-800 to-slate-900 flex flex-col items-center justify-center p-6 text-center text-white">
+        <div className="w-12 h-12 rounded-2xl bg-orange-500/20 text-[#ffa800] flex items-center justify-center mb-3">
+          {category === 'Business Analysis' ? (
+            <Layers className="w-6 h-6" />
+          ) : category === 'UI/UX Design' ? (
+            <LayoutDashboard className="w-6 h-6" />
+          ) : (
+            <Smartphone className="w-6 h-6" />
+          )}
+        </div>
+        <p className="text-xs font-bold uppercase tracking-wider text-[#ffa800] mb-1">{category}</p>
+        <p className="text-sm font-semibold text-slate-200 line-clamp-1">{title}</p>
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      onError={() => setHasError(true)}
+      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      referrerPolicy="no-referrer"
+      loading="lazy"
+    />
+  );
+};
 
 export const Portfolio: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<string>('All');
@@ -62,11 +102,11 @@ export const Portfolio: React.FC = () => {
             >
               {/* Thumbnail Container */}
               <div className="relative aspect-video overflow-hidden bg-slate-100">
-                <img
+                <ProjectImage
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  referrerPolicy="no-referrer"
+                  title={project.title}
+                  category={project.category}
                 />
                 
                 {/* Hover Overlay */}
